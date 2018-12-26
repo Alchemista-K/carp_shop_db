@@ -1,0 +1,75 @@
+<%= form_with(model: shop_database, local: true) do |form| %>
+  <% if shop_database.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shop_database.errors.count, "error") %> prohibited this shop_database from being saved:</h2>
+
+      <ul>
+      <% shop_database.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="table table-bordered">
+  <tr>
+    <!-- 店名 -->
+    <th class="show_width">店名</th>
+    <td><%= form.text_field :shop_name, :size=>"120", style: "border: none" %></td>
+  </tr>
+  
+  <!-- お店紹介文 -->
+  <tr>
+    <th class="show_width">紹介</th>
+    <td><%= form.text_area :introduction, :size=>"120×250", style: "border: none" %></td>
+  </tr>
+  
+  <!-- 都道府県。jp_prefectureを使用 -->
+  <tr>
+    <th class="show_width">都道府県</th>
+    <td><%= form.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %></td>
+  </tr>
+
+  <!-- 住所。都道府県以降を記載 -->
+  <tr>
+    <th class="show_width">住所（都道府県以降）</th>
+    <td><%= form.text_field :address, :size=>"120", style: "border: none" %>
+    <br>記載例：広島市南区南蟹屋２−３−１</td>
+  </tr>
+  
+  <!-- 電話番号を記載 -->
+  <tr>
+    <th class="show_width">電話番号</th>
+    <td><%= form.text_field :tel_number, :size=>"120", style: "border: none" %>
+    <br>記載例：0825682777</td>
+  </tr>
+  
+  <!-- ジャンルを選択。「お好み焼き屋」、「焼肉屋」、「居酒屋」、「その他料理店」、「スポーツバー」、「スポーツショップ」、「その他」のいずれかを選択。 -->
+  <tr>
+    <th class="show_width">ジャンル</th>
+    <td><%= form.select :genre, [["お好み焼き屋", "お好み焼き屋"], ["焼肉屋", "焼肉屋"], ["居酒屋", "居酒屋"],["その他料理店", "その他料理店"], ["スポーツバー", "スポーツバー"], ["スポーツショップ", "スポーツショップ"], ["その他", "その他"]] ,class:"form-control" %></td>
+  </tr>
+  
+  <!-- 特徴を選択。「カープファンが経営」、「選手、元選手の実家」、「元選手が経営」、「その他」のいずれかを選択。 -->
+  <tr>
+    <th class="show_width">特徴</th>
+    <td><%= form.select :feature, [["カープファンが経営", "カープファンが経営"], ["選手、元選手の実家", "選手、元選手の実家"], ["元選手が経営", "元選手が経営"],["その他", "その他"]] ,class:"form-control" %></td>
+  </tr>
+  
+  <!-- 写真をアップロード。 -->
+  <tr>
+    <th class="show_width">写真</th>
+    <td><%= form.file_field :photo %></td>
+  </tr>
+  
+  <tr>
+    <th class="show_width">コメント</th>
+    <td><%= form.text_area :comment, :size=>"120×250", style: "border: none" %></td>
+  </tr>
+</table>
+
+
+  <div class="actions">
+    <button type="submit" class="btn btn-primary">OK</button>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module ShopDatabasesHelper
+end

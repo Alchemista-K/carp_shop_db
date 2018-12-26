@@ -1,0 +1,243 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #EA0014;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #fff;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 650px;
+  background-color: #EA0014;
+  /*height: 100%; */
+  /*min-height: 100%;*/
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border:none;
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+.masthead-brand{
+  font-size:16px;
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    top: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+
+}
+
+/* --- 全体のBOX定義 ---------------------------------------- */
+.box {
+  position   : relative;
+  max-width  : 900px;
+  height     : 500px;
+  margin     : auto;
+  overflow   : hidden;
+}
+
+/* --- 背景の指定 ------------------------------------------- */
+.box .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s */
+}
+
+/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+.box .src1 {
+  background: image-url('01_okonomi_mtnr.JPG');  /* 背景の画像を指定 */
+  background-size:cover;
+}
+.box .src2 {
+  background: image-url('02_2016nippon_series.JPG');   /* 背景の画像を指定 */
+  background-size:cover;
+  animation-delay  : 5s;
+}
+.box .src3 {
+  background: image-url('03_anaba.JPG');   /* 背景の画像を指定 */ 
+  background-size:cover;
+  animation-delay  : 10s;
+}
+.box .src4 {
+  background: image-url('04_tsukemen.JPG');   /* 背景の画像を指定 */
+  background-size:cover;
+  animation-delay  : 15s;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+   5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+
+/* --- 前面の文字定義 ----- */
+.box .boxString{
+  position   : absolute;
+  display    : inline-block;
+  padding    : 20px;
+  //background : rgba(0, 127, 255, 0.7);          /* 半透明の青 */
+  color      : #fff;
+  top        : 50%;                               /* 中央寄せ */
+  left       : 50%;
+  transform  : translate(-50%,-50%);
+  z-index    : 11;
+}
+
+
+
+/* フッター */
+
+#footer{
+    margin-top: 10px;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+#footer .navbar-nav{
+    float: left;
+    width: 100%;
+    margin: 10px auto;
+    display: inline;
+}
+
+#footer .navbar-nav > li {
+  display: inline-block;
+}
+
+#footer .navbar-nav>li{
+    text-align: center;
+    font-size: 18px;
+    margin-right:20px;
+}
+
+#footer .navbar-nav>li>a{
+    color:#000080;
+}
+
+.copy{
+    margin-top: 20px;
+    color:#000080;
+    font-size: 18px;
+}

@@ -1,0 +1,101 @@
+
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="container">
+ 
+           <!-- ヘッダーここから -->
+          <div class="masthead clearfix">
+            <div class="container inner">
+            <% if current_user %>
+                <h3 class="masthead-brand"><%= current_user.email %>さん、鯉な店をシェアしよう！</h3>
+            <% end %>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="/about">鯉な店データベースとは？　　</a></li>
+                  
+                  <% if current_user %>
+                    <li class="active">
+                      <%= link_to 'ログアウト', destroy_session_path(current_user) %>
+                    </li>
+                  <% else %>
+                  <li>
+                    <li class="active">  
+                      <a href="/users/sign_up">新規登録</a>
+                    <li class="active">
+                  </li>
+                  <li>
+                    <li class="active">
+                      <a href="/users/sign_in">ログイン</a>
+                    </li>
+                  </li>
+                  <% end %>
+                </ul>
+              </nav>
+            </div>
+          </div>
+<!-- ヘッダーここまで -->
+
+
+<!-- メインここから -->
+<div class="main"> 
+  <div class="box">
+        <!-- 背景画像をスライドショーにする -->
+        <div class="bgImg src1"></div>
+        <div class="bgImg src2"></div>
+        <div class="bgImg src3"></div>
+        <div class="bgImg src4"></div>
+            
+    <div class="boxString">
+      <div class="inner cover">
+        <h1 class="cover-heading">鯉な店データベース</h1>
+          <p class="lead">あなたの街にある、カープファンの聖地をシェアしよう！</p>
+        </div>
+
+
+              <p class="lead">
+              <h4>今日はここに行こう</h4>
+              <a href="/shop_databases" class="btn btn-lg btn-default">鯉な店を探す</a>
+              
+              
+              <% if current_user %>
+                <br><br><a href="/shop_databases/new" class="btn btn-lg btn-default">鯉な店をシェアする</a>
+              <% end %>
+              </p>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- メインここまで -->
+    
+<!-- フッターここから -->
+<div  id="footer">
+
+<!-- footer nav -->
+  <ul class="navbar-nav list-inline">
+    <li class="first">
+      <a href="/about">鯉な店データベースとは？</a>
+    </li>
+     <% if current_user %>
+      <li class="first">
+        <%= link_to 'ログアウト', destroy_session_path(current_user) %>
+      </li>
+    <% else %>
+      <li>
+        <a href="/users/sign_up">新規登録</a>
+      </li>
+      <li>
+        <a href="/users/sign_in">ログイン</a>
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- copy right -->
+  <div class="copy">
+    <span>©︎ 鯉な店データベース</span>
+  </div>
+</div>
+<!-- end footer -->

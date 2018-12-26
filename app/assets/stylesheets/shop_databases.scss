@@ -1,0 +1,38 @@
+// Place all the styles related to the shop_databases controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.panel-heading{
+    background-color:#000080;
+}
+
+
+.table {
+  width: 95%;
+  margin: auto;
+  margin-top:10px;
+}
+
+.table tbody{
+    
+}
+
+.table-purple{
+    background-color:#000080;
+}
+
+.table th{
+    text-align: auto;
+    border:solid 1px black;
+}
+
+.table td{
+    text-align: left;
+    border:solid 1px black;
+}
+
+.show_width{
+    width:20%;
+    background-color:#000080;
+}
+
