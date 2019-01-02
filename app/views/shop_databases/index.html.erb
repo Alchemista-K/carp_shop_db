@@ -7,27 +7,27 @@
 
 <%= search_form_for @q do |form| %>
     <!-- 都道府県で検索。 -->
-    <%= form.label :都道府県 %>
+    <%= form.label :都道府県, :style=>"color:black;" %>
     <%= form.collection_select :prefecture_code_eq, [@zenkoku] + JpPrefecture::Prefecture.all, :code, :name %>
 
     <!-- ジャンルで検索。「お好み焼き屋」、「焼肉屋」、「居酒屋」、「その他料理店」、「スポーツバー」、「スポーツショップ」、「その他」のいずれかを選択。 -->
-    <%= form.label :ジャンル %>
+    <%= form.label :ジャンル, :style=>"color:black;" %>
     <%= form.select :genre_eq, [["全て選択", ""],["お好み焼き屋", "お好み焼き屋"], ["焼肉屋", "焼肉屋"], ["居酒屋", "居酒屋"],["その他料理店", "その他料理店"], ["スポーツバー", "スポーツバー"], ["スポーツショップ", "スポーツショップ"], ["その他", "その他"]] %>
 
     <!-- 特徴で検索。「カープファンが経営」、「選手、元選手の実家」、「元選手が経営」、「その他」のいずれかを選択。 -->
-    <%= form.label :特徴 %>
+    <%= form.label :特徴, :style=>"color:black;" %>
     <%= form.select :feature_eq, [["全て選択", ""],["カープファンが経営", "カープファンが経営"], ["選手、元選手の実家", "選手��元選手の実家"], ["元選手が経営", "元選手が経営"],["その他", "その他"]] %>
   
 <!-- キーワードで検索。 -->
-    <%= form.label :キーワードで検索 %>
+    <%= form.label :キーワードで検索, :style=>"color:black;" %>
     <%= form.text_field :shop_name_or_introduction_or_address_or_comment_cont, :placeholder => "検索してみよう！" %>  
   
-  <button type="submit" class="btn btn-primary">検索</button>
+  <button type="submit" class="btn btn-danger">検索</button>
 <% end %>
 
 
 <table class="table table-bordered">
-  <thead class="table-purple">
+  <thead class="table-first">
     <tr>
       <th>店名</th>
       <%# <th>紹介</th> %>
@@ -45,19 +45,19 @@
   <tbody>
     <% @shop_databases.each do |shop_database| %>
       <tr>
-        <td><%= shop_database.shop_name %></td>
-        <%# <td><%= shop_database.introduction %><%# </td> %>
-        <td><%= shop_database.prefecture.name %></td>
-        <td><%= shop_database.address %></td>
-        <%# <td><%= shop_database.tel_number %><%# </td> %>
-        <td><%= shop_database.genre %></td>
-        <td><%= shop_database.feature %></td>
-        <%# <td><%= image_tag shop_database.photo.to_s, size: "50x50" %><%# </td> %>
-        <%# <td><%= shop_database.comment %><%# </td> %>
-        <td><%= link_to '表示', shop_database %></td>
+        <td class="text-dark"><%= shop_database.shop_name %></td>
+        <%# <td class="text-dark"><%= shop_database.introduction %><%# </td> %>
+        <td class="text-dark"><%= shop_database.prefecture.name %></td>
+        <td class="text-dark"><%= shop_database.address %></td>
+        <%# <td class="text-dark"><%= shop_database.tel_number %><%# </td> %>
+        <td class="text-dark"><%= shop_database.genre %></td>
+        <td class="text-dark"><%= shop_database.feature %></td>
+        <%# <td class="text-dark"><%= image_tag shop_database.photo.to_s, size: "50x50" %><%# </td> %>
+        <%# <td class="text-dark"><%= shop_database.comment %><%# </td> %>
+        <td><%= link_to '表示', shop_database, :style=>"color:red;" %></td>
         <% if current_user %>
-        <td><%= link_to '編集', edit_shop_database_path(shop_database) %></td>
-        <td><%= link_to '削除', shop_database_path(shop_database), method: :delete, data: { confirm: '削除してよろしいですか?' } %></td>
+        <td><%= link_to '編集', edit_shop_database_path(shop_database), :style=>"color:red;" %></td>
+        <td><%= link_to '削除', shop_database_path(shop_database), method: :delete, :style=>"color:red;", data: { confirm: '削除してよろしいですか?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -67,7 +67,7 @@
 <br>
 
 <% if current_user %>
-<%= link_to 'お店を追加', new_shop_database_path %><br>
+<%= link_to 'お店を追加', new_shop_database_path, :style=>"color:black;" %><br>
 <% end %>
 
-<a href="/">トップページに戻る</a>
+<a href="/" class="text-danger">トップページに戻る</a>

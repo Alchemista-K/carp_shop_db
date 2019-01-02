@@ -1,3 +1,6 @@
+
+  <div class="form-wrapper-inner">
+
 <h1><%= t('.sign_in') %></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,9 +23,15 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
+  <div class="form-group-button">
+    <%= f.submit  t('.sign_in'), class: 'btn btn-danger btn-lg' %>
   </div>
 <% end %>
 
 <%= render 'devise/shared/links' %>
+
+</div>
+
+
+
+<a href="/" class="text-danger">トップページに戻る</a>

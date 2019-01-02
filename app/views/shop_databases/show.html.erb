@@ -7,31 +7,31 @@
 <table class="table table-bordered">
   <tr>
     <th class="show_width">店名</th>
-    <td><%= @shop_database.shop_name %></td>
+    <td class="text-dark"><%= @shop_database.shop_name %></td>
   </tr>
   <tr>
     <th class="show_width">紹介</th>
-    <td><%= @shop_database.introduction %></td>
+    <td class="text-dark"><%= @shop_database.introduction %></td>
   </tr> 
   <tr>
     <th class="show_width">都道府県</th>
-    <td><%= @shop_database.prefecture.name %></td>
+    <td class="text-dark"><%= @shop_database.prefecture.name %></td>
   </tr>
   <tr>
     <th class="show_width">住所（都道府県以降）</th>
-    <td><%= @shop_database.address %></td>
+    <td class="text-dark"><%= @shop_database.address %></td>
   </tr>
   <tr>
     <th class="show_width">電話番号</th>
-    <td><%= @shop_database.tel_number %></td>
+    <td class="text-dark"><%= @shop_database.tel_number %></td>
   </tr> 
   <tr>
     <th class="show_width">ジャンル</th>
-    <td><%= @shop_database.genre %></td>
+    <td class="text-dark"><%= @shop_database.genre %></td>
   </tr>
   <tr>
     <th class="show_width">特徴</th>
-    <td><%= @shop_database.feature %></td>
+    <td class="text-dark"><%= @shop_database.feature %></td>
   </tr>
   <tr>
     <th class="show_width">写真</th>
@@ -39,14 +39,15 @@
   </tr>
   <tr>
     <th class="show_width">コメント</th>
-    <td><%= @shop_database.comment %></td>
+    <td class="text-dark"><%= @shop_database.comment %></td>
   </tr>
 </table>
 
 
 <% if current_user %>
-<%= link_to '編集', edit_shop_database_path(@shop_database) %> <br>
+<%= link_to '編集', edit_shop_database_path(@shop_database), :style=>"color:red;" %> <br>
 <% end %>
 
-<%= link_to 'データベースに戻る', shop_databases_path %> |
-<a href="/">トップページに戻る</a>
+<%= link_to 'データベースに戻る', shop_databases_path, :style=>"color:red;" %> 
+<a class="text-danger">|</a>
+<a href="/" class="text-danger">トップページに戻る</a>

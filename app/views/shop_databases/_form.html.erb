@@ -34,14 +34,14 @@
   <tr>
     <th class="show_width">住所（都道府県以降）</th>
     <td><%= form.text_field :address, :size=>"120", style: "border: none" %>
-    <br>記載例：広島市南区南蟹屋２−３−１</td>
+    <br><a class="text-dark">記載例：広島市南区南蟹屋２−３−１　　※全て全角で記載</a></td>
   </tr>
   
   <!-- 電話番号を記載 -->
   <tr>
     <th class="show_width">電話番号</th>
     <td><%= form.text_field :tel_number, :size=>"120", style: "border: none" %>
-    <br>記載例：0825682777</td>
+    <br><a class="text-dark">記載例：0825682777　　※全て半角。ハイフンなし</a></td>
   </tr>
   
   <!-- ジャンルを選択。「お好み焼き屋」、「焼肉屋」、「居酒屋」、「その他料理店」、「スポーツバー」、「スポーツショップ」、「その他」のいずれかを選択。 -->
@@ -70,6 +70,6 @@
 
 
   <div class="actions">
-    <button type="submit" class="btn btn-primary">OK</button>
+    <button type="submit" class="btn btn-danger">OK</button>
   </div>
 <% end %>

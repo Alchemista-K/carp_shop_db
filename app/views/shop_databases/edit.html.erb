@@ -4,5 +4,5 @@
 
 <%= render 'form', shop_database: @shop_database %>
 
-<%= link_to '表示', @shop_database %> |
-<%= link_to '戻る', shop_databases_path %>
+<%= link_to '表示', @shop_database, :style=>"color:red;"  %> <a class="text-danger">|</a>
+<%= link_to '戻る', shop_databases_path, :style=>"color:red;"  %>
