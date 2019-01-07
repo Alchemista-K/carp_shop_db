@@ -5,9 +5,9 @@ ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-#group :development, :test do
-#  gem 'sqlite3' #開発環境とテスト環境ではDBにsqlite3を採用。
-#end
+group :development, :test do
+  gem 'sqlite3' #開発環境とテスト環境ではDBにsqlite3を採用。
+end
 # 本番ではpostgresqlを使用するためのgem
 #group :production do
   gem 'pg'
