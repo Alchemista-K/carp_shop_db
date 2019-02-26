@@ -7,6 +7,7 @@ class ShopDatabasesController < ApplicationController
   def index
     @q = ShopDatabase.ransack(params[:q])
     @shop_databases = @q.result
+    #ドロップダウンの選択肢に４７都道府県に加えて「全国」を入れるため
     @zenkoku = JpPrefecture::Prefecture.new
     @zenkoku.name = "全国"
   end
