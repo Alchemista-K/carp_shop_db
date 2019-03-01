@@ -47,7 +47,7 @@ class ShopDatabasesController < ApplicationController
   def update
     respond_to do |format|
       if @shop_database.update(shop_database_params)
-        format.html { redirect_to @shop_database, notice: 'Shop database was successfully updated.' }
+        format.html { redirect_to @shop_database, notice: '投稿の更新に成功しました' }
         format.json { render :show, status: :ok, location: @shop_database }
       else
         format.html { render :edit }
