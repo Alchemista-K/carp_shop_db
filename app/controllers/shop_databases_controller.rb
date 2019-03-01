@@ -33,7 +33,7 @@ class ShopDatabasesController < ApplicationController
 
     respond_to do |format|
       if @shop_database.save
-        format.html { redirect_to @shop_database, notice: 'Shop database was successfully created.' }
+        format.html { redirect_to @shop_database, notice: '新たに投稿しました' }
         format.json { render :show, status: :created, location: @shop_database }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class ShopDatabasesController < ApplicationController
   def destroy
     @shop_database.destroy
     respond_to do |format|
-      format.html { redirect_to shop_databases_url, notice: 'Shop database was successfully destroyed.' }
+      format.html { redirect_to shop_databases_url, notice: '投稿を削除しました' }
       format.json { head :no_content }
     end
   end
