@@ -1,6 +1,11 @@
 class ShopDatabasesController < ApplicationController
   before_action :set_shop_database, only: [:show, :edit, :update, :destroy]
-
+  
+  #ログインしていない場合、新規投稿や編集しようとするとログイン画面にリダイレクト（20190303）
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  
+  #before_action :authenticate_user, only: [:new, :edit,:create, :update, :destroy]
+  
   # GET /shop_databases
   # GET /shop_databases.json
   
