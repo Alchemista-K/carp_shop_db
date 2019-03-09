@@ -11,13 +11,16 @@ class ShopDatabase < ApplicationRecord
   tel_numberは最大11文字、commentは最大200文字
   (2019.2.27)
 =end
+=begin  
+  ユーザーIDを追加。空の投稿を制限している（２０１９０３０９）
+=end
 
   validates:shop_name, {presence: true}
   validates:introduction, {presence: true, length:{maximum:200}}  
   validates:address, {presence: true, length:{maximum:50}}
   validates:tel_number, {presence: true, length:{maximum:11}}
   validates:comment, {presence: true, length:{maximum:200}}  
-  
+  validates:user_id, {presence: true}  
   
         #写真アップロード
         mount_uploader :photo, PhotosUploader
