@@ -20,7 +20,7 @@ class ShopDatabase < ApplicationRecord
   validates:address, {presence: true, length:{maximum:50}}
   validates:tel_number, {presence: true, length:{maximum:11}}
   validates:comment, {presence: true, length:{maximum:200}}  
-  validates:user_id, {presence: true}  
+  #validates:user_id, {presence: true}    ユーザーIDとの紐付けがうまくいかないので一旦外す（２０１９０４２７）
   
         #写真アップロード
         mount_uploader :photo, PhotosUploader
