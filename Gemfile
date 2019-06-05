@@ -75,7 +75,7 @@ gem 'bootstrap', '~> 4.1.1'
 #bootstrap導入にはjqueryに依存するため、併せて導入
 gem 'jquery-rails'
 
-#carrierwaveは画像アップロード用のgem。データベースに写真をアップロードする。
+#carrierwaveは画像アップロード用のgem。データベースに写真をアップロー�����する。
 gem 'carrierwave'
 
 #都道府県をドロップダウンで入力するためのgem。
@@ -93,5 +93,7 @@ gem 'devise-i18n-views'
 
 
 gem 'mini_magick'  #diveseにプロフィール画像を追加するために必要
+
+gem 'mysql2', '~> 0.5.2'  #mysqlを導入（２０１９・６・５）
 
 

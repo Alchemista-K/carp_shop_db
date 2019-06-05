@@ -1,3 +1,5 @@
+#DBをMySQLに統一（２０１９・６・５）
+
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -5,23 +7,26 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: root
+  password:
+  host: localhost
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: shop_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: shop_test
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: shop_production
+  username: shop
+  password: <%= ENV['SAMPLE_MYSQL_DATABASE_PASSWORD'] %>
