@@ -5,12 +5,13 @@ ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-group :development, :test do
-  gem 'sqlite3' #開発環境とテスト環境ではDBにsqlite3を採用。
-end
-# 本番ではpostgresqlを使用するためのgem
+#group :development, :test do
+  #gem 'sqlite3' 
+  #開発環境とテスト環境ではDBにsqlite3を採用。（２０１９・６・６コメントアウト。MySQLを開発、テスト、本番で導入のため）
+#end
+# 本番ではpostgresqlを使用するためのgem（２０１９・６・６コメントアウト。MySQLを開発、テスト、本番で導入のため）
 #group :production do
-  gem 'pg'
+  #gem 'pg'
 #end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -95,5 +96,6 @@ gem 'devise-i18n-views'
 gem 'mini_magick'  #diveseにプロフィール画像を追加するために必要
 
 gem 'mysql2', '~> 0.5.2'  #mysqlを導入（２０１９・６・５）
+#gem 'mysql2'   #mysqlを導入。バージョン指定せず（２０１９・６・６）
 
 
