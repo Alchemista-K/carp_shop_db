@@ -9,7 +9,8 @@ development: &development
   pool: 5
   username: root
   password: 
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
+  #socketを”/tmp/mysql.sock”から”/var/lib/mysql/mysql.sock”に変更（mysql_config --socketで調べた結果　２０１９・６・９）
 
 test: &test
   adapter: mysql2
