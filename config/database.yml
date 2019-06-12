@@ -3,7 +3,7 @@
 
 development: &development
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: utf8
   reconnect: false
   database: shop_development
   pool: 5
@@ -14,7 +14,7 @@ development: &development
 
 test: &test
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: utf8
   reconnect: false
   database: shop_test
   pool: 5
@@ -24,7 +24,7 @@ test: &test
 
 production: &production
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: utf8
   reconnect: false
   database: shop_production
   pool: 40
