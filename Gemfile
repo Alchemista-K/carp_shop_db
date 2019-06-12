@@ -5,14 +5,6 @@ ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-#group :development, :test do
-  #gem 'sqlite3' 
-  #開発環境とテスト環境ではDBにsqlite3を採用。（２０１９・６・６コメントアウト。MySQLを開発、テスト、本番で導入のため）
-#end
-# 本番ではpostgresqlを使用するためのgem（２０１９・６・６コメントアウト。MySQLを開発、テスト、本番で導入のため）
-#group :production do
-  #gem 'pg'
-#end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -76,7 +68,7 @@ gem 'bootstrap', '~> 4.1.1'
 #bootstrap導入にはjqueryに依存するため、併せて導入
 gem 'jquery-rails'
 
-#carrierwaveは画像アップロード用のgem。データベースに写真をアップロー�����する。
+#carrierwaveは画像アップロード用のgem。データベースに写真をアップロードする。
 gem 'carrierwave'
 
 #都道府県をドロップダウンで入力するためのgem。
@@ -92,10 +84,6 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-
 gem 'mini_magick'  #diveseにプロフィール画像を追加するために必要
 
 gem 'mysql2', '~> 0.5.2'  #mysqlを導入（２０１９・６・５）
-#gem 'mysql2'   #mysqlを導入。バージョン指定せず（２０１９・６・６）
-
-
