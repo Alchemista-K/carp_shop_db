@@ -91,7 +91,14 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-
 gem 'mini_magick'  #diveseにプロフィール画像を追加するために必要
 
+# Run against the latest stable release（RSpec導入に必要（２０１９・６・１５））
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
 
+#RSpecの実行時間を短縮できるgem（２０１９・６・１５）
+group :development, :test do
+  gem 'spring-commands-rspec'
+end
